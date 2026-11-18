@@ -58,9 +58,10 @@ $freeGiB = [math]::Round($os.FreePhysicalMemory / 1MB, 2)
 Write-Output "Free RAM: $freeGiB GiB (need $MinFreeGiB)"
 if ($freeGiB -lt $MinFreeGiB) { throw "Not enough free RAM. Close other apps and try again." }
 $logs = Join-Path $repo 'private\logs'
-$args2 = @('-m', ('"' + $model + '"'), '--alias', $Alias, '--host', '127.0.0.1', '--port', "$Port", '--ctx-size', '16384', '--parallel', '1', '--threads', '8', '--cache-type-k', 'q8_0', '--cache-type-v', 'q8_0', '--flash-attn', 'on', '--jinja', '--reasoning', 'off', '--gpu-layers', '0', '--offline', '--no-webui')
+$args2 = @('-m', ('"' + $model + '"'), '--alias', $Alias, '--host', '127.0.0.1', '--port', "$Port", '--ctx-size', '8192', '--parallel', '1', '--threads', '8', '--cache-type-k', 'q8_0', '--cache-type-v', 'q8_0', '--flash-attn', 'on', '--jinja', '--reasoning', 'off', '--gpu-layers', , '--offline', '--no-webui')
 if ($DryRun) { Write-Output "DryRun: would start $server $($args2 -join ' ')"; return }
 if (!(Test-Path -LiteralPath $logs)) { New-Item -ItemType Directory -Path $logs | Out-Null }
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $p = Start-Process -FilePath $server -ArgumentList $args2 -WorkingDirectory $root -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logs "server-$stamp.out.log") -RedirectStandardError (Join-Path $logs "server-$stamp.err.log")
 Write-Output "Started DSAI server, PID $($p.Id). Give it about a minute to load."
+
