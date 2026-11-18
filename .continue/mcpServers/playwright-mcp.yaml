@@ -1,0 +1,11 @@
+﻿name: Web Search mcpServer
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: Browser search
+    command: cmd
+    args:
+      - "/c"
+      - "npx.cmd"
+      - "-y"
+      - "duckduckgo-websearch"

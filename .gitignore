@@ -1,0 +1,27 @@
+# Unencrypted personal data and unlocked vault workspace — NEVER commit or export
+private/*
+!private/README.md
+!private/MEMORY.template.md
+
+# Local runtime junction or linked model binaries (~5 GB)
+runtime/
+*.gguf
+
+# Temporary test outputs and local backups
+tests/results/
+tests/tmp-vault/
+_backup/
+*.bak
+*.tmp
+
+# Keep encrypted vaults trackable/exportable if desired, but ignore temporary lock files
+vault/*.tmp
+vault/*.lock
+
+# OS and Editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+# Generated chat rule (refreshed by tools/refresh-leftovers.ps1)
+.continue/rules/leftovers-now.md

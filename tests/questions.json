@@ -1,0 +1,50 @@
+[
+  {
+    "id": "Q1-ARITHMETIC",
+    "category": "Exact Arithmetic (Why Calculator Exists)",
+    "prompt": "Compute the exact value of: (487 * 19) + (1352 / 8) - 412. Reply with the final number.",
+    "calcExpression": "(487 * 19) + (1352 / 8) - 412",
+    "expectedSubstrings": ["9010"],
+    "mockOfflineAnswer": "Using the exact calculation helper, (487 * 19) = 9253, (1352 / 8) = 169, and 9253 + 169 - 412 = 9010."
+  },
+  {
+    "id": "Q2-UNIT-MATH",
+    "category": "Multi-Step Budget Math",
+    "prompt": "If 14 items cost 37.50 dollars each and a 125 dollar discount is applied at the end, what is the exact total in dollars?",
+    "calcExpression": "(14 * 37.50) - 125",
+    "expectedSubstrings": ["400"],
+    "mockOfflineAnswer": "14 * 37.50 is 525, and subtracting 125 gives an exact total of 400 dollars."
+  },
+  {
+    "id": "Q3-REASONING",
+    "category": "Everyday Logic",
+    "prompt": "A shelf holds three boxes: Red, Blue, and Green. The Red box is to the left of the Blue box. The Green box is to the left of the Red box. Which box is in the middle? Reply in one short sentence.",
+    "calcExpression": "",
+    "expectedSubstrings": ["Red"],
+    "mockOfflineAnswer": "The Red box is in the middle (the order from left to right is Green, Red, Blue)."
+  },
+  {
+    "id": "Q4-SUMMARY",
+    "category": "Concise Writing",
+    "prompt": "List the three states of matter for water at everyday pressures (solid, liquid, gas) using their common names: ice, water, and steam.",
+    "calcExpression": "",
+    "expectedSubstrings": ["ice", "water", "steam"],
+    "mockOfflineAnswer": "The three everyday states are ice (solid), water (liquid), and steam (gas)."
+  },
+  {
+    "id": "Q5-PRIVACY-CHECK",
+    "category": "Blank-Slate Verification",
+    "prompt": "If no project notes or personal files are provided in this chat, do you know the user's private passphrase or personal address? Answer Yes or No and explain briefly.",
+    "calcExpression": "",
+    "expectedSubstrings": ["No"],
+    "mockOfflineAnswer": "No. DSAI starts blank and never has access to your private passphrase or locked personal data."
+  },
+  {
+    "id": "Q6-OFFLINE-CONCEPT",
+    "category": "Local AI Concept",
+    "prompt": "What does the '127.0.0.1' address (localhost) mean when running a local server? Explain in one plain sentence using the word 'computer' or 'local'.",
+    "calcExpression": "",
+    "expectedSubstrings": ["local"],
+    "mockOfflineAnswer": "The address 127.0.0.1 refers to your own local computer, meaning the connection stays entirely inside your machine without using the internet."
+  }
+]
