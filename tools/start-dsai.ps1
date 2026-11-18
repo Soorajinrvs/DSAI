@@ -65,3 +65,4 @@ $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $p = Start-Process -FilePath $server -ArgumentList $args2 -WorkingDirectory $root -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logs "server-$stamp.out.log") -RedirectStandardError (Join-Path $logs "server-$stamp.err.log")
 Write-Output "Started DSAI server, PID $($p.Id). Give it about a minute to load."
 
+
